@@ -1,11 +1,11 @@
-from survey import db
+from . import db
 
 class Question(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     question_text = db.Column(db.String(200))
     number_of_yes_votes = db.Column(db.Integer, default=0)
     number_of_no_votes = db.Column(db.Integer, default=0)
-    number_of_maybe_votes = db.Column(db.Interger, default=0)
+    number_of_maybe_votes = db.Column(db.Integer, default=0)
     
     def __init__(self, question_text, number_of_yes_votes=0, number_of_no_votes=0, number_of_maybe_votes=0):
         
